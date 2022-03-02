@@ -1,0 +1,25 @@
+<div id="center" class="main center">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <img class="details-img" [src]="movieDetails?.poster_path" />
+      </div>
+      <div class="col-xs-12 col-sm-8">
+        <h2>{{movieDetails?.title}}</h2>
+        <h3>{{movieDetails?.tagline}}</h3>
+        <p class="meta-wrap">
+          <span class="rating">rating: {{movieDetails?.vote_average}} /</span>
+          <span *ngFor="let language of movieDetails?.spoken_languages" class="meta"> {{language.name}} /</span>
+          <span class="meta"> {{movieDetails?.runtime}} min. / {{movieDetails?.release_date | date: 'YYYY'}} </span>
+        </p>
+
+        <ul  class="genres">
+          <li *ngFor="let genre of movieDetails?.genres">{{genre.name}}</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
