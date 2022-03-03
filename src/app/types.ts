@@ -19,6 +19,7 @@ export class MovieDetails {
   spoken_languages!: Language[];
   release_date!: Date;
   genres!: Genre[];
+  production_companies!: Compagnies[];
 
   constructor() {
   }
@@ -33,6 +34,13 @@ interface Language {
 interface Genre {
   id: number,
   name: string
+}
+
+interface Compagnies {
+  id: number;
+  logo_path: string;
+  name: string;
+  origin_country: string;
 }
 
 export class Genres {
